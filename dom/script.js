@@ -1,3 +1,156 @@
+/**
+ * Javascript Async
+ * Promise
+ *  1 - Pending
+ *  2 - Fulfilled
+ *  3 - Rejectecd
+ *  fetch => 
+ *      1 - تسعمل من اجل ارسال واستقبال وتعديل ومسح البيانات من backend
+ *      2 - Get , Post , Delete , Put
+ * _____
+ * __________________
+ * _____
+*/
+
+const promise = new Promise((resolve, reject) => {
+    const success = false;
+
+    if (success) {
+        resolve("Operating Colmpleted");
+    } else {
+        reject("Somtigng went woronh");
+    }
+});
+
+promise.then((result) => {
+    console.log(result);
+}).catch(ex => {
+    console.log(ex);
+});
+
+async function getStudents() {
+    try {
+        const response = await fetch("http://localhost:3000/students", {
+            method: ""
+        });
+
+        if (!response.ok) {
+            throw new Error("فشل جلب البيانات");
+        }
+
+        console.log("response => ", response);
+        const students = await response.json();
+
+        console.log("students => ", students);
+    } catch (error) {
+
+    };
+}
+
+function displayStudents(data) {
+
+};
+
+getStudents();
+
+
+
+
+
+
+// const student = {
+//     id: 1,
+//     name: "Ahmed"
+// }
+
+// const jsonData = JSON.stringify(student);
+
+// console.log("json data : ", jsonData);
+
+// const studentData = JSON.parse(jsonData);
+
+// console.log("studentData : ", studentData);
+
+// // Traditional Funcation
+// function add(a, b) {
+//     return a + b;
+// }
+
+// // Arrow Funcation
+// const add2 = (a, b) => {
+//     return a + b;
+// }
+
+// // Shorter Funcation
+// const multipy = (a, b) => a * b;
+
+
+// const teacher = {
+//     name: "Ahmed",
+//     id: 1
+// };
+
+// const { id, name } = teacher;
+
+// const colors = ["red", "green", "blue"];
+
+// const [first, second] = colors;
+
+// const numbers = [1, 2, 3];
+
+// const newNumbers = [...numbers, 4, 5, {
+//     ...teacher
+// }];
+
+
+// const manager = {
+//     name: "Ali",
+//     address: {
+//         city: "istanbul"
+//     }
+// };
+
+// console.log(manager.address?.city);
+// console.log(manager.contact?.phone);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  Array
  Object
@@ -11,23 +164,23 @@
  Manager=> name,id,phone number , email
 */
 
-class Animal {
-    makeSound() {
-        console.log("Animal Sound");
-    }
-}
+// class Animal {
+//     makeSound() {
+//         console.log("Animal Sound");
+//     }
+// }
 
-class Dog extends Animal {
-    makeSound() {
-        console.log("Woof!")
-    }
-}
+// class Dog extends Animal {
+//     makeSound() {
+//         console.log("Woof!")
+//     }
+// }
 
-class Cat extends Animal {
-    makeSound() {
-        console.log("Meow!")
-    }
-}
+// class Cat extends Animal {
+//     makeSound() {
+//         console.log("Meow!")
+//     }
+// }
 
 
 
@@ -113,7 +266,7 @@ class Cat extends Animal {
 // student1.age = 23;
 // delete student1.city;
 
-console.log("Student Name : ");
+// console.log("Student Name : ");
 
 // students[1] = "ffff";
 
